@@ -1,10 +1,39 @@
 .main{
     width: 100vw;
-    
+    display: flex;
+    justify-content: flex-end;
 }
 
 .header-nav{
     display: flex;
+    flex: 1;
     flex-direction: column;
-    margin: 50px 50px;
+    margin: 30px 20px;
+    order: 3;
+    border: 1px;
+    border-color: black;
+}
+.news {
+    
+    display: flex;
+    order: 2;
+}
+.feed {
+    display: flex;
+    order: 1;
+}
+.nav-btn{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    padding: 20px 20px;
+    margin: 10px 10px;
+    background-color: rgb(20, 182, 215);
+    color: rgb(255, 255, 255);
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-decoration: none;
+    border-radius: 20px;
+}
+.material-symbols-outlined {
+    margin-right: 3px;
 }
