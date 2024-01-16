@@ -4,28 +4,52 @@ body{
 }
 .main{
     width: 100vw;
+    height: 100vh;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    flex-direction: row;
 }
-
-
+/* Main parts of the page*/
+.news {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    order: 1;
+    border: 1px solid black;
+    margin-left: -340px;
+    padding: 5px 0.1px;
+    width: 30%;
+    background-color: rgb(20, 182, 215);
+}
+.feed {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    border: 1px solid black;
+}
+.header {
+    display:flex;
+    order: 3;
+    margin-right: -300px;
+}
+/* Subparts of the main parts*/
 .header-nav{
     display: flex;
     flex: 1;
     flex-direction: column;
     margin: 30px 20px;
-    order: 3;
-    border: 1px;
-    border-color: black;
 }
-.news {
-    
+.new {
     display: flex;
-    order: 2;
-}
-.feed {
-    display: flex;
-    order: 1;
+    margin: 0px;
+    padding: 5px;
+    font-size: large;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-style: oblique;
+    background-color: inherit;
+    color: rgb(255, 255, 255);
+    border-bottom: 3px solid rgb(235, 235, 245);
 }
 .nav-btn{
     display: flex;
@@ -39,6 +63,7 @@ body{
     text-decoration: none;
     border-radius: 20px;
 }
+/* ICON FIX */
 .material-symbols-outlined {
     margin-right: 3px;
 }
