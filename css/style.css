@@ -9,36 +9,40 @@ body{
     justify-content: space-around;
     flex-direction: row;
 }
+
 /* Main parts of the page*/
+
 .news {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     order: 1;
     border: 1px solid black;
-    margin-left: -340px;
-    padding: 5px 0.1px;
+    margin-left: -72px;
+    padding: 1px 1px;
     width: 30%;
+    height: 98%;
     background-color: rgb(20, 182, 215);
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.news::-webkit-scrollbar{
+    display: none;
 }
 .feed {
     display: flex;
     flex-direction: column;
     order: 2;
     border: 1px solid black;
+    flex-grow: 1;
 }
 .header {
     display:flex;
     order: 3;
-    margin-right: -300px;
+    margin-right: -100px;
 }
+
 /* Subparts of the main parts*/
-.header-nav{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 30px 20px;
-}
 .new {
     display: flex;
     margin: 0px;
@@ -50,6 +54,49 @@ body{
     background-color: inherit;
     color: rgb(255, 255, 255);
     border-bottom: 3px solid rgb(235, 235, 245);
+    width: 100%;
+}
+.feed-bar {
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+}
+.feed-body {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    border: 1px solid black;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.feed-body::-webkit-scrollbar{
+    display: none;
+}
+.post {
+    margin: 10px;
+    border: 1px solid black;
+}
+.post-bar {
+    font-size: larger;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+}
+.post-title {
+    font-size: x-large;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+}
+.post-body {
+    font-size: larger;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+}
+.header-nav{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 30px 20px;
 }
 .nav-btn{
     display: flex;
@@ -63,6 +110,10 @@ body{
     text-decoration: none;
     border-radius: 20px;
 }
+
+/* Subclasses and actions */
+
+
 /* ICON FIX */
 .material-symbols-outlined {
     margin-right: 3px;
