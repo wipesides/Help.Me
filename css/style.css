@@ -7,22 +7,20 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
+
 /* Main parts of the page*/
-ul{
-    margin: 0;
-}
 .news {
     position: sticky;
     left: 0;
     display: flex;
     flex-direction: column;
-    list-style-type: none;
-    padding: 0px;
-    align-items: center;
     flex-wrap: wrap;
     width: 25%;
     border: 1px solid black;
-
+    margin-left: -340px;
+    padding: 5px 0.1px;
+    width: 30%;
+    background-color: rgb(20, 182, 215);
 }
 .feed {
     display: flex;
@@ -30,18 +28,22 @@ ul{
     order: 2;
     width: 56%;
     border: 1px solid black;
+    flex-grow: 1;
 }
 .header {
     position: sticky;
     right: 0;
     display: flex;
     order: 3;
+    margin-right: -300px;
 }
+
 /* Subparts of the main parts*/
 .header-nav{
     display: flex;
     flex: 1;
     flex-direction: column;
+    margin: 30px 20px;
 }
 .new {
     display: flex;
@@ -53,9 +55,7 @@ ul{
     font-style: oblique;
     background-color: rgb(51, 202, 31);
     color: rgb(255, 255, 255);
-    margin-bottom: 4px;
-    border-radius: 4px;
-    cursor: pointer;
+    border-bottom: 3px solid rgb(235, 235, 245);
 }
 .nav-btn{
     display: flex;
@@ -69,6 +69,10 @@ ul{
     text-decoration: none;
     border-radius: 20px;
 }
+
+/* Subclasses and actions */
+
+
 /* ICON FIX */
 .material-symbols-outlined {
     margin-right: 3px;
