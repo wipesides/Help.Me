@@ -40,6 +40,43 @@ ol{
     order: 3;
 }
 
+.feed-bar {
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+}
+.feed-body {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    border: 1px solid black;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.feed-body::-webkit-scrollbar{
+    display: none;
+}
+.post {
+    margin: 10px;
+    border: 1px solid black;
+}
+.post-bar {
+    font-size: larger;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+}
+.post-title {
+    font-size: x-large;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+}
+.post-body {
+    font-size: larger;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+}
+
 /* Subparts of the main parts*/
 .header-nav{
     display: flex;
