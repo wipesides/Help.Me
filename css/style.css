@@ -3,53 +3,59 @@ body{
     justify-content: center;
 }
 .main{
-    width: 100vw;
-    height: 100vh;
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
+    justify-content: space-between;
 }
 /* Main parts of the page*/
+ul{
+    margin: 0;
+}
 .news {
+    position: sticky;
+    left: 0;
     display: flex;
     flex-direction: column;
+    list-style-type: none;
+    padding: 0px;
+    align-items: center;
     flex-wrap: wrap;
-    order: 1;
+    width: 25%;
     border: 1px solid black;
-    margin-left: -340px;
-    padding: 5px 0.1px;
-    width: 30%;
-    background-color: rgb(20, 182, 215);
+
 }
 .feed {
     display: flex;
     flex-direction: column;
     order: 2;
+    width: 56%;
     border: 1px solid black;
 }
 .header {
-    display:flex;
+    position: sticky;
+    right: 0;
+    display: flex;
     order: 3;
-    margin-right: -300px;
 }
 /* Subparts of the main parts*/
 .header-nav{
     display: flex;
     flex: 1;
     flex-direction: column;
-    margin: 30px 20px;
 }
 .new {
     display: flex;
-    margin: 0px;
-    padding: 5px;
+    padding: 6px 12px;
     font-size: large;
+    width: 95%;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 500;
     font-style: oblique;
-    background-color: inherit;
+    background-color: rgb(51, 202, 31);
     color: rgb(255, 255, 255);
-    border-bottom: 3px solid rgb(235, 235, 245);
+    margin-bottom: 4px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 .nav-btn{
     display: flex;
@@ -71,6 +77,7 @@ body{
 
 @media only screen and (min-width: 1250px) {
     .main {
-      width: 1120px;
+      width: 1200px;
+      position:relative;
     }
 }
