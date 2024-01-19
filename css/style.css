@@ -7,7 +7,11 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
-
+ol{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
 /* Main parts of the page*/
 .news {
     position: sticky;
@@ -15,11 +19,9 @@ body{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
     width: 25%;
     border: 1px solid black;
-    margin-left: -340px;
-    padding: 5px 0.1px;
-    width: 30%;
     background-color: rgb(20, 182, 215);
 }
 .feed {
@@ -34,8 +36,8 @@ body{
     position: sticky;
     right: 0;
     display: flex;
+    height: 100vh;
     order: 3;
-    margin-right: -300px;
 }
 
 /* Subparts of the main parts*/
@@ -56,6 +58,7 @@ body{
     background-color: rgb(51, 202, 31);
     color: rgb(255, 255, 255);
     border-bottom: 3px solid rgb(235, 235, 245);
+    border-radius: 4px;
 }
 .nav-btn{
     display: flex;
@@ -83,5 +86,13 @@ body{
     .main {
       width: 1200px;
       position:relative;
+    }
+}
+@media only screen and (max-width: 897px) {
+    .header {
+      display: none;
+    }
+    .news{
+        display: none;
     }
 }
