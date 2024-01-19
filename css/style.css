@@ -60,6 +60,7 @@ ol{
 .post {
     margin: 10px;
     border: 1px solid black;
+    font-weight: 200;
 }
 .post-bar {
     font-size: larger;
