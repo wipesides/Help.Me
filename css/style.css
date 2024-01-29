@@ -53,7 +53,7 @@ ol{
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 500;
     font-style: oblique;
-    background-color: rgb(51, 202, 31);
+    background-color: rgb(99, 163, 139);
     color: rgb(255, 255, 255);
     border-bottom: 3px solid rgb(235, 235, 245);
     border-radius: 4px;
@@ -82,6 +82,10 @@ news::-webkit-scrollbar{
     margin: 10px;
     border: 1px solid black;
     font-weight: 200;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15), 
+              0 2px 2px rgba(0,0,0,0.15), 
+              0 4px 4px rgba(0,0,0,0.15), 
+              0 8px 8px rgba(0,0,0,0.15);
 }
 .post-bar {
     font-size: larger;
