@@ -1,0 +1,29 @@
+.news {
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 20%;
+    height: 100vh;
+    border: 1px solid black;
+    background-color: rgb(20, 182, 215);
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.new {
+    display: flex;
+    padding: 6px 12px;
+    font-size: large;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-style: oblique;
+    background-color: rgb(99, 163, 139);
+    color: rgb(255, 255, 255);
+    border-bottom: 3px solid rgb(235, 235, 245);
+    border-radius: 4px;
+}
+news::-webkit-scrollbar{
+    display: none;
+}

@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    display: flex;
+    justify-content: center;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+ol{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
