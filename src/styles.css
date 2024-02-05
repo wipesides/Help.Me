@@ -3,7 +3,12 @@ body{
     display: flex;
     justify-content: center;
 }
-.main{
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+app-root{
     display: flex;
     flex-direction: row;
     justify-content: space-around;

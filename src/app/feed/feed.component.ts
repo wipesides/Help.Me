@@ -4,12 +4,15 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-feed',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+  ],
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.css'
 })
 export class FeedComponent implements OnInit{
   posts : any[] = [];
+  postsService : PostsService = inject(PostsService);
    async ngOnInit(){
       try {
         this.posts = await this.postsService.getPosts();
@@ -17,6 +20,5 @@ export class FeedComponent implements OnInit{
         console.error('Failed to fetch posts:',error)
       }
     }
-    constructor(private postsService : PostsService){
-    }
+    constructor(){}
 }

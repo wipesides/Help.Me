@@ -1,103 +1,103 @@
 {
     "posts": [
-        {"post-1": {
+        {
+            "post-id": "1",
             "post-bar": {
                 "name": "Jane Doe",
                 "date": "20.02.2024"
             },
             "post-title": "Volunteer Opportunity at Animal Shelter",
             "post-body": "We have a volunteer opportunity at our local animal shelter. Help us care for and find homes for our furry friends!"
-            }
         },
-        {"post-2": {
+        {
+            "post-id": "2",
             "post-bar": {
                 "name": "John Smith",
                 "date": "18.01.2024"
             },
             "post-title": "Food Drive for Local Homeless Shelter",
             "post-body": "We're organizing a food drive to support our local homeless shelter.Please consider donating non-perishable food items!"
-            }
         },
-        {"post-3": {
+        {
+            "post-id": "3",
             "post-bar": {
                 "name": "Emily Johnson",
                 "date": "22.01.2024"
             },
             "post-title": "Volunteer Opportunity at Animal Shelter",
             "post-body": "The local animal shelter is looking for volunteers to help with animal care and socialization. Join us in making a difference!"
-            }
         },
-        {"post-4": {
+        {
+            "post-id": "4",
             "post-bar": {
                 "name": "Michael Brown",
                 "date": "27.01.2024"
             },
             "post-title": "Community Cleanup Day",
             "post-body": "Let's come together as a community and make our neighborhood cleaner and greener. Join us for the community cleanup day on Saturday!"
-            }
         },
-        {"post-5": {
+        {
+            "post-id": "5",
             "post-bar": {
                 "name": "Sarah Davis",
                 "date": "02.02.2024"
             },
             "post-title": "Free Yoga Classes in the Park",
             "post-body": "Enjoy the benefits of yoga with free classes held every weekend in the park. All skill levels are welcome!"
-            }
         },
-        {"post-6": {
+        {
+            "post-id": "6",
             "post-bar": {
                 "name": "David Wilson",
                 "date": "07.02.2024"
             },
             "post-title": "Fundraiser Gala for Children's Hospital",
             "post-body": "Join us for an elegant evening of dinner, dancing, and fundraising to support the Children's Hospital. Your contribution can make a difference in a child's life!"
-            }
         },
-        {"post-7": {
+        {
+            "post-id": "7",
             "post-bar": {
                 "name": "Sophia Martinez",
                 "date": "12.02.2024"
             },
             "post-title": "Art Exhibition at the Local Gallery",
             "post-body": "Discover the beauty of local artists' creations at our upcoming art exhibition. Don't miss this opportunity to appreciate and support local talent!"
-            }
         },
-        {"post-8": {
+        {
+            "post-id": "8",
             "post-bar": {
                 "name": "Ethan Thompson",
                 "date": "17.02.2024"
             },
             "post-title": "Coding Workshop for Beginners",
             "post-body": "Interested in learning to code? Join our free coding workshop designed for beginners. No prior experience required!"
-            }
         },
-        {"post-9": {
+        {
+            "post-id": "9",
             "post-bar": {
                 "name": "Olivia Clark",
                 "date": "22.02.2024"
             },
             "post-title": "Book Club Meeting Announcement",
             "post-body": "Calling all book lovers! Our book club will be meeting next week to discuss our latest read. Come and share your thoughts and insights!"
-            }
         },
-        {"post-10": {
+        {
+            "post-id": "10",
             "post-bar": {
                 "name": "Liam Rodriguez",
                 "date": "27.02.2024"
             },
             "post-title": "Community Garden Expansion",
             "post-body": "We're expanding our community garden and need volunteers to help prepare the ground and plant new crops. Join us in creating a sustainable and beautiful space!"
-            }
         },
-        {"post-11": {
+        {
+            "post-id": "11",
             "post-bar": {
                 "name": "Daniel Clark",
                 "date": "18.01.2024"
             },
             "post-title": "Blood Drive to Save Lives",
             "post-body": "Donate blood and help save lives! Join us at the community center this Saturday for our blood drive event."
-            }
-        } 
+        }
     ]
 }

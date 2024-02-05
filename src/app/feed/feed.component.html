@@ -1,5 +1,10 @@
-<ol class="news">
-        <li *ngFor = "let post of posts">
-            <div class="new-title">  </div>
-        <li>
-</ol>
+<div class="feed">
+    <div class="feed-bar"> This is feed bar!</div>
+    <div class="feed-body">
+        <div class = "post" *ngFor ="let post of posts">
+            <div class="post-bar"> {{post['post-bar']['name']}} - {{post['post-bar']['date']}}</div>
+            <div class="post-title"> {{post['post-title']}}</div>
+            <div class="post-body"> {{post['post-body']}}</div>
+        </div>
+    </div>
+</div>

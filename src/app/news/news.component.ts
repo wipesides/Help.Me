@@ -5,16 +5,20 @@ import { CommonModule } from '@angular/common';
   selector: 'app-news',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './news.component.html',
   styleUrl: './news.component.css'
 })
 export class NewsComponent implements OnInit{
-    news : string[] = [];
+    news : any[] = [];
     newsService : NewsService = inject(NewsService);
     async ngOnInit(){
+      try {
         this.news = await this.newsService.getNews();
+      } catch (error) {
+        console.error('Failed to fetch posts:',error)
+      }
     }
     constructor(){}
 }

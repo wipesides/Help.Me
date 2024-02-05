@@ -1,0 +1,10 @@
+.header {
+    position: fixed;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    height: 95vh;
+    order: 3;
+    align-items: center;
+    width: 250px;
+}
