@@ -36,11 +36,13 @@
     
 }
 .post-bar {
+    margin: 3px;
     font-size: larger;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 500;
 }
 .post-title {
+    margin: 3px;
     font-size: x-large;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 500;
