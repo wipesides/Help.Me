@@ -1,20 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-    display: flex;
-    justify-content: center;
-}
-main{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-app-root{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-ol{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
+    * {
+        box-sizing: border-box;
+    }
+    html,body{
+        font-size: 10px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--blue);
+        color: white;
+        overflow: hidden;
+    }
+    :root {
+        --full-black: #000000;
+        --darker-blue: #0a58a8;
+        --black: #13072e;
+        --lighter-blue: #15b0f8;
+        --blue: #2470c2;
+        --very-light-blue: #c6dbec;
+        --gradient-green: linear-gradient(90deg,#0097b2,#7ed957);
+        --gradient-dark-blue: linear-gradient(to right,#000000,#3533cd);
+        --gradient-light-blue: linear-gradient(90deg,#cdffd8,#94b9ff);
+    }
+    .main{
+        position:relative;
+        min-width: 100%;
+        height: 100vh;
+        top: 1;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.1em;
+        background: var(--darker-blue);
+    }
+    ol{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    /* ICON FIX */
+    .material-symbols-outlined {
+        margin-right: 3px;
+        font-size: xx-large;
+    }
+    
+    
+    @media only screen and (min-width: 1250px) {
+        .main {
+          width: 800px;
+          position:relative;
+        }
+    }
+    @media only screen and (max-width: 897px) {
+        .options {
+          display: none;
+        }
+        .news{
+            display: none;
+        }
+    }

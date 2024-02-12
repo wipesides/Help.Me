@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { NewsService } from '../news.service';
 import { CommonModule } from '@angular/common';
 @Component({
@@ -8,7 +8,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
   ],
   templateUrl: './news.component.html',
-  styleUrl: './news.component.css'
+  styleUrl: './news.component.css',
+  // encapsulation: ViewEncapsulation.None,
 })
 export class NewsComponent implements OnInit{
     news : any[] = [];

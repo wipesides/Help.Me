@@ -1,10 +1,7 @@
 <ol class="news">
-    <!-- EXAMPLE NEW
-        <div class="new">
-            <div class="new-title"> TITLE NAME </div>
-            
-        </div>
-    -->
+    <li class= "new" *ngIf="news.length === 0">
+        <div class ="new-title"> There are no news available currently.</div>
+    </li>
     <li class = "new" *ngFor = "let new of news">
         <div class="new-title"> {{new['title']}}  </div>
     <li>

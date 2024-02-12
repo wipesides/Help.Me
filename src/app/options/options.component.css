@@ -1,0 +1,36 @@
+.options {
+    position: relative;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+    order: 3;
+    min-width: fit-content;
+    width: fit-content;
+    align-items: center;
+    padding-bottom: 5em;
+}
+.options-nav{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-bottom: 30%;
+}
+.nav-btn{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    padding: 20px 20px;
+    margin: 10px 10px;
+    background: var(--gradient-green);
+    color: rgb(255, 255, 255);
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-decoration: none;
+    border-radius: 20px;
+}
+.material-symbols-outlined {
+    margin-right: 3px;
+    font-size: xx-large;
+}

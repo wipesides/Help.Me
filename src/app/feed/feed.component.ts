@@ -1,18 +1,15 @@
-import { Component,inject,OnInit } from '@angular/core';
+import { Component,inject,OnInit, ViewEncapsulation } from '@angular/core';
 import { PostsService } from '../posts.service';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button'
-import { MatIconModule } from '@angular/material/icon'
 @Component({
   selector: 'app-feed',
   standalone: true,
   imports: [
     CommonModule,
-    MatButtonModule,
-    MatIconModule,
   ],
   templateUrl: './feed.component.html',
-  styleUrl: './feed.component.css'
+  styleUrl: './feed.component.css',
+  // encapsulation: ViewEncapsulation.None,
 })
 export class FeedComponent implements OnInit{
   posts : any[] = [];

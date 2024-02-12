@@ -7,6 +7,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { CreateHelpComponent } from './create-help/create-help.component';
 import { CommunityComponent } from './community/community.component';
 import { NgModule } from '@angular/core';
+import { FeedComponent } from './feed/feed.component';
 
 export const routes: Routes = [
     {

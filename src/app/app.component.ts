@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { NewsComponent } from './news/news.component';
 import { FeedComponent } from './feed/feed.component';
@@ -10,6 +10,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CommunityComponent } from './community/community.component';
 import { CommonModule } from '@angular/common';
+import { OptionsComponent } from './options/options.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -27,9 +28,11 @@ import { CommonModule } from '@angular/common';
     AboutUsComponent,
     CommunityComponent,
     CommonModule,
+    OptionsComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './../styles.css',
+  // encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
   title = 'HelpMe';

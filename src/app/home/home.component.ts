@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation} from '@angular/core';
 import { FeedComponent } from '../feed/feed.component';
 
 @Component({
@@ -8,7 +8,8 @@ import { FeedComponent } from '../feed/feed.component';
     FeedComponent
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  // encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent {
 

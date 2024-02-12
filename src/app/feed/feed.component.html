@@ -1,19 +1,33 @@
 <div class="feed">
-    <div class="feed-bar"> This is feed bar!</div>
     <div class="feed-body">
-        <div class = "post" *ngFor ="let post of posts">
-            <div class="post-bar"> {{post['post-bar']['name']}} - {{post['post-bar']['date']}}</div>
-            <div class="post-title"> {{post['post-title']}}</div>
-            <div class="post-body"> {{post['post-body']}}</div>
-            <!--  
-                <button mat-icon-button> 
-                <mat-icon> bookmark_border </mat-icon>
-            </button>
-            <button mat-mini-fab>
-                <mat-icon> </mat-icon>
-            </button>
-            --> 
-            
+        <div class="post" *ngIf = "posts.length === 0; else listPosts">
+            <div class="post-head">
+                <div class="post-bar"> Now </div>
+                <div class="post-title"> There are no help calls at the moment. </div>
+            </div>
+            <div class="post-body"> You can create a help call, or refresh the page to check if any help calls exist.</div>
         </div>
+        <ng-template #listPosts>
+        <div class = "post" *ngFor ="let post of posts">
+            <div class="post-head">
+                <div class="post-bar"> {{post['post-bar']['name']}} - {{post['post-bar']['date']}}</div>
+                <div class="post-title"> {{post['post-title']}}</div>
+            </div>
+            <div class="post-body">
+                <div class="post-text"> {{post['post-body']}} </div>
+                <div class="post-buttons"> 
+                    <span class="material-symbols-outlined">
+                        accessibility
+                    </span>
+                    <span class="material-symbols-outlined">
+                        contact_support
+                    </span>
+                    <span class="material-symbols-outlined">
+                        bookmark
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ng-template>
     </div>
 </div>
