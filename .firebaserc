@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "helpme-sc"
+  },
+  "targets": {
+    "helpme-sc": {
+      "hosting": {
+        "help-me": [
+          "helpme-sc"
+        ]
+      }
+    }
   }
 }

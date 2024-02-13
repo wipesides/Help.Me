@@ -35,5 +35,5 @@ import { OptionsComponent } from './options/options.component';
   // encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  title = 'HelpMe';
+  title = 'help-me';
 }

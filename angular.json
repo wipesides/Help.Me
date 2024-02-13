@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HelpMe": {
+    "help-me": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "HelpMe:build:production"
+              "buildTarget": "help-me:build:production"
             },
             "development": {
-              "buildTarget": "HelpMe:build:development"
+              "buildTarget": "help-me:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "HelpMe:build"
+            "buildTarget": "help-me:build"
           }
         },
         "test": {
@@ -88,6 +88,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "help-me:build:production",
+              "serveTarget": "help-me:serve:production"
+            },
+            "development": {
+              "buildTarget": "help-me:build:development",
+              "serveTarget": "help-me:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
