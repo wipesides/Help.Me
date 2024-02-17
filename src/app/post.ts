@@ -4,5 +4,7 @@ export interface Post {
     user: string;
     postTitle: string;
     postBody: string;
-    attachment?: string; // Firebase Storage Image Url
+    attachmentsDownloadUrls: string[];
+    attachmentsFilePaths: string[]; // Firebase Storage Image Url
+    reports?: [];
 }
