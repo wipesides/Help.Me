@@ -8,7 +8,6 @@ import { v4 as uuidv4} from 'uuid';
 import { Post } from './post';
 import { New } from './new';
 import { arrayUnion } from 'firebase/firestore';
-import { getLocaleExtraDayPeriodRules } from '@angular/common';
 @Injectable({
   providedIn: 'root'
 })
@@ -86,17 +85,17 @@ export class FirebaseService {
     const newPostRef = doc(postsCollectionRef)
     newPost.id = newPostRef.id;
     // Create attachments and store them if they exist.
-    if (attachments.length > 0){
-      attachments?.forEach(async (attachment) => {
+    if (attachments && attachments.length > 0){
+      for (const attachment of attachments){
         const attachmentId = uuidv4();
         const attachmentFilePath = `${newPost.id}/${attachmentId}`
         const attachmentRef = ref(this.storage,attachmentFilePath)
-        newPost.attachmentsFilePaths.push(attachmentFilePath)
+        newPost.attachmentsFilePaths?.push(attachmentFilePath)
         const task = uploadBytesResumable(attachmentRef,attachment);
         await task;
         const downloadURL = await getDownloadURL(attachmentRef);
-        newPost.attachmentsDownloadUrls.push(downloadURL);
-      })
+        newPost.attachmentsDownloadUrls?.push(downloadURL);
+      }
     }
     // İnitialize the post and store it.
     await setDoc(newPostRef,newPost);
@@ -110,7 +109,7 @@ export class FirebaseService {
   // Remove a post and a new
   async _removePost(currentPost: Post){
     // Remove attachments if it exists
-    if (currentPost.attachmentsFilePaths.length > 0){
+    if (currentPost.attachmentsFilePaths && currentPost.attachmentsFilePaths.length > 0){
       for (const attachmentFilePath of currentPost.attachmentsFilePaths){
         const removeFilePath = ref(this.storage,attachmentFilePath);
         await deleteObject(removeFilePath).then(() => {
@@ -131,6 +130,9 @@ export class FirebaseService {
     await deleteDoc(newRef);
   }
   // Post actions
+  async _editPost(currentPost: Post){
+
+  }
   async _bookmarkPost(post: Post){
     const postId = post.id;
     const uid = this.auth.currentUser?.uid;
@@ -151,9 +153,28 @@ export class FirebaseService {
       });
     }
   }
-  async seeDetails(){}
-  async reportPost(){}
-  async askQuestion(){}
+  async _seeUpdates(currentPost: Post){
+    const uid = currentPost.id
+    const currentPostRef = doc(this.db,"posts",uid);
+    const currentPostSnap = await getDoc(currentPostRef);
+    if (currentPostSnap.exists()){
+      const currentPostData = currentPostSnap.data();
+      const currentPostUpdates = currentPostData['updates'];
+      return currentPostUpdates;
+    }
+  }
+  async _addUpdate(currentPost: Post,update: string){
+
+  }
+  async _askQuestion(currentPost: Post,question: string){
+
+  }
+  async _answerQuestion(currentPost: Post,answer: string){
+
+  }
+  async reportPost(){
+    // Implementation later.
+  }
   // Profile actions
   async getUserPosts(){
     const uid = this.auth.currentUser?.uid;
