@@ -18,10 +18,13 @@ export class SignInComponent {
     email: new FormControl(''),
     password: new FormControl('')
   });
-  constructor(private service: FirebaseService){}
-  submitSignInForm(){
+  constructor(private service: FirebaseService){
+    console.log(service);
+  }
+  async submitSignInForm(){
+    console.log("Hello");
     if (this.signInForm.value.email && this.signInForm.value.password){
-      this.service._signIn(this.signInForm.value.email,this.signInForm.value.password);
+      await this.service._signIn(this.signInForm.value.email,this.signInForm.value.password);
     }
     else{
       alert("Enter both the mail and the password!");

@@ -3,7 +3,7 @@
     left: 20px;
     display: flex;
     min-width: 80%;
-    width: 80%;
+    width: 250px;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: start;

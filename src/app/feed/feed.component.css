@@ -12,6 +12,7 @@
 .feed-body {
     display: flex;
     flex-direction: column;
+    width: 800px;
     padding: 2px;
     overflow: scroll;
     scrollbar-width: none;
@@ -49,6 +50,7 @@
 .post-body {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     font-size: x-large;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 400;

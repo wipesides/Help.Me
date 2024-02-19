@@ -13,15 +13,19 @@
             </div>
           </div>
           <div class="create">
-            <span class="material-symbols-outlined" id="create"
+            <span class="material-symbols-outlined" id="create" (click)="submitCreateHelpForm"
               >add_circle</span
             >
           </div>
           <div>
-            <span class="material-symbols-outlined" id="create"
-              >attach_file</span
-            >
-          </div>
+            <label for="fileUpload">
+                <span class="material-symbols-outlined relative" id="create">
+                    <input class="absolute" type="file" id="fileUpload" multiple="multiple">
+                    attach_file
+                </span>
+            </label>
+        </div>
+        <div>
           <div>
             <span class="material-symbols-outlined" id="create"
               >edit_square</span
@@ -29,11 +33,12 @@
           </div>
         </div>
       </div>
-      <div class="post_write">
+      </div>
+      <form class="post_write" [formGroup]="createHelpForm">
         <div class="post_title">
-          <input type="text" placeholder="Help Title" />
+          <input type="text" placeholder="Help Title" formControlName="postTitle"/>
         </div>
-        <textarea
+        <textarea formControlName="postBody"
           class="post_desc"
           placeholder="Write your help here..."
           name="w3review"
@@ -42,7 +47,6 @@
           maxlength="2500"
           style="resize: none"
         ></textarea>
-      </div>
-    </div>
+      </form>
   </div>
 </div>
