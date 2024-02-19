@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { FeedComponent } from './feed/feed.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { AuthguardService } from './authguard.service';
 
 export const routes: Routes = [
     {
@@ -24,17 +25,20 @@ export const routes: Routes = [
     {
         path:'settings',
         component: SettingsComponent,
-        title: 'Settings'    
+        title: 'Settings',
+        canActivate: [AuthguardService]
     },
     {
         path:'explore',
         component: ExploreComponent,
-        title:'Explore'
+        title:'Explore',
+        canActivate: [AuthguardService]
     },
     {
         path:'profile',
         component: ProfileComponent,
-        title:'Profile'
+        title:'Profile',
+        canActivate: [AuthguardService]
     },
     {
         path:'about-us',
@@ -44,12 +48,14 @@ export const routes: Routes = [
     {
         path:'create-help',
         component: CreateHelpComponent,
-        title:'Create a help'
+        title:'Create a help',
+        canActivate: [AuthguardService]
     },
     {
         path:'community',
         component: CommunityComponent,
-        title:'Communities'
+        title:'Communities',
+        canActivate: [AuthguardService]
     },
     {
         path:'sign-up',

@@ -175,7 +175,7 @@ export class FirebaseService {
     await updateDoc(postRef,{questions: currentPost.questions})
   }
   async _answerQuestion(currentPost: Post,answer: string){
-
+    
   }
   async reportPost(){
     // Implementation later.

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { MatSelectModule} from '@angular/material/select'
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input'
@@ -14,4 +14,5 @@ import { MatInputModule} from '@angular/material/input'
   styleUrl: './profile.component.css',
 })
 export class ProfileComponent {
+  constructor(){}
 }
