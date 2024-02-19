@@ -20,7 +20,7 @@ export class FirebaseService {
     await signInWithEmailAndPassword(this.auth,email,password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log(`${user.displayName} has signed in! Welcome ${user.displayName}`);
+      console.log(`${user.email} has signed in! Welcome ${user.email}`);
     })
     .catch((error) => {
       const errorCode = error.code;

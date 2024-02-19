@@ -6,7 +6,7 @@
             <span style="font-size: large; font-style: italic;"> "Always, all together!"</span>
         </div>
     </div>
-    <div class="login-register-container">
+    <div class="login-register-container" *ngIf="!isLoggedIn">
         <span class="nav-btn" style="height: 4vh; background: white; color: var(--black)" routerLink="sign-in">
             <span class="material-symbols-outlined">
                 login
@@ -19,5 +19,8 @@
             </span>
             Sign Up
             </span>
+    </div>
+    <div class="welcome-message" *ngIf="isLoggedIn">
+        <span style="font-weight: 600; font-size: x-large; font-style: normal;"> Welcome!</span>
     </div>
 </div>

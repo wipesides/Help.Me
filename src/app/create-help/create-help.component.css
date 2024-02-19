@@ -96,3 +96,17 @@
     font-size: 64px;
     cursor: pointer;
 }
+.absolute {
+    position: absolute;
+    display: none;
+    width: 64px;
+    height: 64px;
+}
+textarea {
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-size: 20px;
+}
+input {
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-size: 32px;
+}
