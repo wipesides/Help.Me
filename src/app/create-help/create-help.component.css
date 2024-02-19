@@ -5,7 +5,7 @@
     flex-wrap: wrap;
     align-items: center;
     order: 2;
-    width: fit-content;
+    width: 850px;
     padding-right: 4%;
     height: 100vh;
 }

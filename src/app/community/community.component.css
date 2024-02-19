@@ -1,0 +1,14 @@
+.feed {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 850px;
+    height: 100vh;
+}
+.coming-soon{
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-weight: 600;
+    font-size: xx-large;
+}
