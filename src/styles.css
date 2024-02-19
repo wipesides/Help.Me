@@ -23,14 +23,11 @@
         --gradient-light-blue: linear-gradient(90deg,#cdffd8,#94b9ff);
     }
     .main{
-        position:relative;
         min-width: 100%;
         height: 100vh;
-        top: 1;
-        flex-grow: 1;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-top: 0.1em;
         background: var(--darker-blue);
     }

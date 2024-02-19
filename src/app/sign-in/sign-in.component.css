@@ -1,13 +1,8 @@
 .feed {
-    position: relative;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
     order: 2;
-    width: fit-content;
-    padding-right: 4%;
-    height: 100vh;
 }
 .login {
     border-radius: 32px;

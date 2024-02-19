@@ -1,12 +1,11 @@
 .news {
     position: relative;
-    left: 20px;
     display: flex;
-    min-width: 80%;
-    width: 80%;
+    width: 95%;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: start;
+    order: 1;
     height: 86vh;
     border-radius: 15px;
     background-color: white !important;
