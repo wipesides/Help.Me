@@ -25,6 +25,7 @@ import {
   getRemoteConfig,
   provideRemoteConfig,
 } from '@angular/fire/remote-config';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -65,6 +66,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(provideMessaging(() => getMessaging())),
     importProvidersFrom(providePerformance(() => getPerformance())),
     importProvidersFrom(provideStorage(() => getStorage())),
-    importProvidersFrom(provideRemoteConfig(() => getRemoteConfig())),
+    importProvidersFrom(provideRemoteConfig(() => getRemoteConfig())), provideAnimationsAsync('noop'),
   ],
 };

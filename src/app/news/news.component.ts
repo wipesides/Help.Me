@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';
-import { NewsService } from '../news.service';
+import { FirebaseService } from '../firebase.service';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-news',
@@ -13,10 +13,10 @@ import { CommonModule } from '@angular/common';
 })
 export class NewsComponent implements OnInit{
     news : any[] = [];
-    newsService : NewsService = inject(NewsService);
+    service : FirebaseService = inject(FirebaseService);
     async ngOnInit(){
       try {
-        this.news = await this.newsService.getNews();
+        this.news = await this.service.getNews();
       } catch (error) {
         console.error('Failed to fetch posts:',error)
       }

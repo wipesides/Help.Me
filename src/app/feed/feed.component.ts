@@ -1,6 +1,6 @@
 import { Component,inject,OnInit, ViewEncapsulation } from '@angular/core';
-import { PostsService } from '../posts.service';
 import { CommonModule } from '@angular/common';
+import { FirebaseService } from '../firebase.service';
 @Component({
   selector: 'app-feed',
   standalone: true,
@@ -13,10 +13,10 @@ import { CommonModule } from '@angular/common';
 })
 export class FeedComponent implements OnInit{
   posts : any[] = [];
-  postsService : PostsService = inject(PostsService);
+  service : FirebaseService = inject(FirebaseService);
    async ngOnInit(){
       try {
-        this.posts = await this.postsService.getPosts();
+        this.posts = await this.service.getPosts();
       } catch (error) {
         console.error('Failed to fetch posts:',error)
       }

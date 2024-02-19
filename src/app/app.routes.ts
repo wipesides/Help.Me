@@ -8,6 +8,8 @@ import { CreateHelpComponent } from './create-help/create-help.component';
 import { CommunityComponent } from './community/community.component';
 import { NgModule } from '@angular/core';
 import { FeedComponent } from './feed/feed.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 export const routes: Routes = [
     {
@@ -48,6 +50,16 @@ export const routes: Routes = [
         path:'community',
         component: CommunityComponent,
         title:'Communities'
+    },
+    {
+        path:'sign-up',
+        component: SignUpComponent,
+        title: 'Sign Up'
+    },
+    {
+        path:'sign-in',
+        component: SignInComponent,
+        title:'Sign In'
     }
 ];
 @NgModule({

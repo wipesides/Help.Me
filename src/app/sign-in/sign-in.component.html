@@ -1,0 +1,19 @@
+<div class="feed">
+    <div class="login">
+        <div class="sections_header">Sign in with your email and password</div>
+        <form class="login_sections" [formGroup]="signInForm" (submit)="submitSignInForm">
+            <div>
+                <div class="m_sticks s_n_width">
+                    <input placeholder="E-mail" type="email" class="label_name" name="email" formControlName="email">
+                </div>
+                <div class="m_sticks s_n_width">
+                    
+                    <input placeholder="password" type="password" class="label_name" name="password" formControlName="password">
+                </div>
+            </div>
+            <div class="btn-replacement">
+                <button type="submit" class="btn register-btn">Sign In</button>
+            </div >
+        </form>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+.feed {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    order: 2;
+    width: fit-content;
+    padding-right: 4%;
+    height: 100vh;
+}
+.aboutus_section {
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.aboutus_box {
+    height: 500px;
+    width: 750px;
+    background: var(--gradient-light-blue);
+    border-radius: 32px;
+    padding: 32px 48px;
+}
+.aboutus_p1 {
+    font-size: 28px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--blue);
+    font-weight: 600;
+}
+.aboutus_p2 {
+    color: var(--blue);
+    font-size: 20px;
+}
+.sections_header {
+    width: 100%;
+    font-size: 54px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

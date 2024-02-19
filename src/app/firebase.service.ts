@@ -15,9 +15,9 @@ export class FirebaseService {
 
   constructor(private auth: Auth, private db: Firestore, private storage: Storage, private cfn: Functions) {}
   // Signing in/up/out
-  async _signIn(user: IUser){
+  async _signIn(email: string, password: string){
     const auth = getAuth();
-    await signInWithEmailAndPassword(this.auth,user.email,user.password)
+    await signInWithEmailAndPassword(this.auth,email,password)
     .then((userCredential) => {
       const user = userCredential.user;
       console.log(`${user.displayName} has signed in! Welcome ${user.displayName}`);
@@ -167,7 +167,12 @@ export class FirebaseService {
 
   }
   async _askQuestion(currentPost: Post,question: string){
-
+    if (!currentPost.questions){
+      currentPost.questions = [];
+    }
+    currentPost.questions.push({question:question, answer:""});
+    const postRef = doc(this.db,"posts",currentPost.id);
+    await updateDoc(postRef,{questions: currentPost.questions})
   }
   async _answerQuestion(currentPost: Post,answer: string){
 
