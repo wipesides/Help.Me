@@ -4,7 +4,7 @@
       <span class="material-symbols-outlined" id="prfl">add_circle</span>
       Create Help
     </div>
-    <div class="post_section">
+    <div class="post_section"  [formGroup]="createHelpForm">
       <div class="post_icons">
         <div class="col_flex">
           <div class="col_flex">
@@ -34,7 +34,7 @@
         </div>
       </div>
       </div>
-      <form class="post_write" [formGroup]="createHelpForm">
+      <form class="post_write">
         <div class="post_title">
           <input type="text" placeholder="Help Title" formControlName="postTitle"/>
         </div>

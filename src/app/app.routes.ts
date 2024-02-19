@@ -1,4 +1,4 @@
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, mapToCanActivate } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ExploreComponent } from './explore/explore.component';
@@ -16,6 +16,7 @@ export const routes: Routes = [
     {
         path:'home',
         component: HomeComponent,
+        canActivate: mapToCanActivate([AuthguardService])
     },
     {
         path:'',
@@ -26,19 +27,19 @@ export const routes: Routes = [
         path:'settings',
         component: SettingsComponent,
         title: 'Settings',
-        canActivate: [AuthguardService]
+        canActivate: mapToCanActivate([AuthguardService]),
     },
     {
         path:'explore',
         component: ExploreComponent,
         title:'Explore',
-        canActivate: [AuthguardService]
+        canActivate: mapToCanActivate([AuthguardService])
     },
     {
         path:'profile',
         component: ProfileComponent,
         title:'Profile',
-        canActivate: [AuthguardService]
+        canActivate: mapToCanActivate([AuthguardService])
     },
     {
         path:'about-us',
@@ -49,13 +50,13 @@ export const routes: Routes = [
         path:'create-help',
         component: CreateHelpComponent,
         title:'Create a help',
-        canActivate: [AuthguardService]
+        canActivate: mapToCanActivate([AuthguardService])
     },
     {
         path:'community',
         component: CommunityComponent,
         title:'Communities',
-        canActivate: [AuthguardService]
+        canActivate: mapToCanActivate([AuthguardService])
     },
     {
         path:'sign-up',

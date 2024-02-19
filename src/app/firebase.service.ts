@@ -19,6 +19,7 @@ export class FirebaseService {
     const auth = getAuth();
     await signInWithEmailAndPassword(this.auth,email,password)
     .then((userCredential) => {
+      console.log(userCredential);
       const user = userCredential.user;
       console.log(`${user.email} has signed in! Welcome ${user.email}`);
     })
@@ -97,6 +98,7 @@ export class FirebaseService {
         newPost.attachmentsDownloadUrls?.push(downloadURL);
       }
     }
+    console.log("Done!");
     // İnitialize the post and store it.
     await setDoc(newPostRef,newPost);
   }
@@ -175,7 +177,7 @@ export class FirebaseService {
     await updateDoc(postRef,{questions: currentPost.questions})
   }
   async _answerQuestion(currentPost: Post,answer: string){
-    
+
   }
   async reportPost(){
     // Implementation later.

@@ -41,6 +41,9 @@ export class CreateHelpComponent {
     if (newPost && attachments) {
       await this.service._createPost(newPost,attachments);
     }
+    else if (newPost){
+      await this.service._createPost(newPost);
+    }
     else {
       console.error("Post cannot be sent!");
     }
