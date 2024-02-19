@@ -12,26 +12,24 @@
               <span class="material-symbols-outlined" id="create">delete</span>
             </div>
           </div>
-          <div class="create">
-            <span class="material-symbols-outlined" id="create" (click)="submitCreateHelpForm"
-              >add_circle</span
-            >
-          </div>
-          <div>
             <label for="fileUpload">
                 <span class="material-symbols-outlined relative" id="create">
                     <input class="absolute" type="file" id="fileUpload" multiple="multiple">
                     attach_file
                 </span>
             </label>
-        </div>
-        <div>
-          <div>
-            <span class="material-symbols-outlined" id="create"
-              >edit_square</span
-            >
-          </div>
-        </div>
+            <div>
+              <div>
+                <span class="material-symbols-outlined" id="create"
+                >edit_square</span
+                >
+              </div>
+            </div>
+            <div class="create">
+              <span class="material-symbols-outlined" id="create" (click)="submitCreateHelpForm"
+                >add_circle</span
+              >
+            </div>
       </div>
       </div>
       <form class="post_write" [formGroup]="createHelpForm">
@@ -46,7 +44,9 @@
           cols="150"
           maxlength="2500"
           style="resize: none"
-        ></textarea>
+        >
+      </textarea>
+      <div class="img_counter">Attached File<span>/1</span></div>
       </form>
   </div>
 </div>

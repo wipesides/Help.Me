@@ -5,8 +5,7 @@
     align-items: center;
     order: 2;
     width: max-content;
-    padding-right: 4%;
-    height: 100vh;
+    height: 110vh;
 }
 .settings_section {
     height: 90vh;
@@ -23,7 +22,11 @@
     font-weight: 700;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 12px;
+}
+#prfl {
+    font-size: 100px;
 }
 .label_name {
     width: 90%;
