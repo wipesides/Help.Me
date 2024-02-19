@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup,FormControl,ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-create-help',
@@ -8,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './create-help.component.css'
 })
 export class CreateHelpComponent {
-
+  createHelpForm = new FormGroup({
+    postTitle: new FormControl(""),
+    postBody: new FormControl(""),
+    attachments: new FormControl(""),
+  })
+  constructor(){}
+  submitCreateHelpForm(){
+    
+  }
 }

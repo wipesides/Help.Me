@@ -1,14 +1,14 @@
 <div class="feed">
     <div class="signup">
         <div class="sections_header">Sign Up</div>
-        <form class="signup_sections" formGroup="">
+        <form class="signup_sections" [formGroup]="signUpForm" (submit)="submitSignUpForm">
             <div class=""></div>
             <div class="stick_unique">
                 <div class="m_sticks s_half_width">
-                    <input placeholder="Name" type="text" class="label_name" name="email">
+                    <input placeholder="Name" type="text" class="label_name" name="email" formControlName="name">
                 </div>
                 <div class="m_sticks s_half_width">
-                    <input placeholder="Surname" type="text" class="label_name" name="email">
+                    <input placeholder="Surname" type="text" class="label_name" name="email" formControlName="surn">
                 </div>
             </div>
             <div class="m_sticks s_n_width">
@@ -21,7 +21,7 @@
                 <input placeholder="Password" type="password" class="label_name" name="email">
             </div>
             <div class="btn-replacement">
-                <button class="btn register-btn">Register</button>
+                <button type="submit" class="btn register-btn">Register</button>
             </div>
         </form>
     </div>
