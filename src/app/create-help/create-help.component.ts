@@ -21,7 +21,7 @@ export class CreateHelpComponent {
     attachments: new FormControl(""),
   })
   constructor(private service: FirebaseService){}
-  async submitCreateHelpForm(){
+  async submitCreateHelpForm() {
     const user = getAuth();
     const nameSurname = user.currentUser!.displayName!;
     let newPost: Post | null = null;

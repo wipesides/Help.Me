@@ -2,7 +2,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     width: 850px;
     height: 100vh;

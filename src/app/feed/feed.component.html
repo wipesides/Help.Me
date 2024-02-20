@@ -10,8 +10,15 @@
         <ng-template #listPosts>
         <div class = "post" *ngFor ="let post of posts">
             <div class="post-head">
-                <div class="post-bar"> {{post['name']}} {{post['surname']}} - {{post['date']}}</div>
-                <div class="post-title"> {{post['postTitle']}}</div>
+                <div class="post-bar">
+                    {{post['name']}} {{post['surname']}} - {{post['date']}}
+                    <div class="postActions">
+                        <span class="material-symbols-outlined">more_horiz</span>
+                    </div>
+                </div>
+                <div class="post-title">
+                    {{post['postTitle']}}
+                </div>
             </div>
             <div class="post-body">
                 <div class="post-text"> {{post['postBody']}} </div>

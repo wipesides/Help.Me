@@ -38,18 +38,13 @@
                         </ol>
                 </div>
                 <div>
-                    <label for="bm_check" class="cursor" >
-                        <div class="m_sticks s_half_width" id="bookmarks">Done Helps <span class="material-symbols-outlined">
+                    <label for="dh_check" class="cursor" >
+                        <div class="m_sticks s_half_width" id="bookmarks">The Aids You Support<span class="material-symbols-outlined">
                             expand_more
                             </span>
                         </div>
-                        <input type="checkbox" class="" id="bm_check" style="display: none;" (change)="onDoneHelpsCheckBoxChange($event)">
+                        <input type="checkbox" class="" id="dh_check" style="display: none;" (change)="onDoneHelpsCheckBoxChange($event)">
                     </label>
-                    <div class="m_sticks s_half_width">My Helps
-                        <span class="material-symbols-outlined">
-                            expand_more
-                        </span>
-                    </div>
                     <ol class="bm_box" [hidden]="isHiddenDone" >
                         <li class="bm_li" *ngFor="let post of doneHelps">
                             <a href="">{{post.postTitle}}</a>
@@ -60,26 +55,21 @@
                     </ol>
                 </div>
                 <div>
-                    <label for="bm_check" class="cursor" >
-                        <div class="m_sticks s_half_width" id="bookmarks">Created Helps <span class="material-symbols-outlined">
+                    <label for="mhc_check" class="cursor" >
+                        <div class="m_sticks s_half_width" id="bookmarks">My Helps <span class="material-symbols-outlined">
                             expand_more
                             </span>
                         </div>
-                        <input type="checkbox" class="" id="bm_check" style="display: none;" (change)="onCreatedHelpsCheckBoxChange($event)">
+                        <input type="checkbox" class="" id="mhc_check" style="display: none;" (change)="onCreatedHelpsCheckBoxChange($event)">
                     </label>
-                    <div class="m_sticks s_half_width">My Help Calls
-                        <span class="material-symbols-outlined">
-                            expand_more
-                            </span></div>
-                            <ol class="bm_box" [hidden]="isHiddenCreated">
-                                <li class="bm_li" *ngFor="let post of createdHelps">
-                                    <a href="">{{post.postTitle}}</a>
-                                </li>
-                                <li class="bm_li">
-                                    <a href="">The consequenses of playing games</a>
-                                </li>
-                            </ol>
-                </div>
+                        <ol class="bm_box" [hidden]="isHiddenCreated">
+                            <li class="bm_li" *ngFor="let post of createdHelps">
+                                <a href="">{{post.postTitle}}</a>
+                            </li>
+                            <li class="bm_li">
+                                <a href="">The consequenses of playing games</a>
+                            </li>
+                        </ol>
             </div>
         </div>
     </div>
