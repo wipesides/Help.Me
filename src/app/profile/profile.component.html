@@ -13,84 +13,70 @@
                         account_circle
                     </span>
                 </div>
-                <div class="m_sticks s_half_width">Name</div>
-                <div class="m_sticks s_half_width">Surname</div>
-                <div class="m_sticks s_half_width">Email</div>
-                <div class="m_sticks s_half_width">Phone Number</div>
+                <div class="m_sticks s_half_width">{{userData["name"]}}</div>
+                <div class="m_sticks s_half_width">{{userData["surname"]}}</div>
+                <div class="m_sticks s_half_width">{{userData["email"]}}</div>
+                <div class="m_sticks s_half_width">{{userData["phoneNumber"]}}</div>
 
             </div>
             <div class="profile_right_side">
                 <div>
                     <label for="bm_check" class="cursor" >
-                        <div class="m_sticks s_half_width" id="bookmarks">Bookmarks <span class="material-symbols-outlined">
+                        <div class="m_sticks s_half_width" id="bookmarks">Bookmarked Helps<span class="material-symbols-outlined">
                             expand_more
                             </span>
                         </div>
-                        <input type="checkbox" class="" id="bm_check" style="display: none;">
+                        <input type="checkbox" class="" id="bm_check" style="display: none;" (change)="onBookmarkCheckBoxChange($event)">
                     </label>
-                        <ol class="bm_box hidden">
-                            <li class="bm_li">
-                                <a href="">The consequenses of playing games</a>
+                        <ol class="bm_box" [hidden]="isHiddenBookmark">
+                            <li class="bm_li" *ngFor="let post of bookmarkedHelps">
+                                <a href="">{{post.postTitle}}</a>
                             </li>
                             <li class="bm_li">
                                 <a href="">The consequenses of playing games</a>
-                            </li>
-                            <li class="bm_li">
-                                <a href="">The consequenses of playing games</a>
-                            </li>
-                            <li class="bm_li">
-                                <a href="">asdasdsad</a>
-                            </li>
-                            <li class="bm_li">
-                                <a href="">asdasdsad</a>
                             </li>
                         </ol>
                 </div>
                 <div>
+                    <label for="bm_check" class="cursor" >
+                        <div class="m_sticks s_half_width" id="bookmarks">Done Helps <span class="material-symbols-outlined">
+                            expand_more
+                            </span>
+                        </div>
+                        <input type="checkbox" class="" id="bm_check" style="display: none;" (change)="onDoneHelpsCheckBoxChange($event)">
+                    </label>
                     <div class="m_sticks s_half_width">My Helps
                         <span class="material-symbols-outlined">
                             expand_more
                         </span>
                     </div>
-                    <ol class="bm_box hidden">
-                        <li class="bm_li">
-                            <a href="">The consequenses of playing games</a>
+                    <ol class="bm_box" [hidden]="isHiddenDone" >
+                        <li class="bm_li" *ngFor="let post of doneHelps">
+                            <a href="">{{post.postTitle}}</a>
                         </li>
                         <li class="bm_li">
                             <a href="">The consequenses of playing games</a>
-                        </li>
-                        <li class="bm_li">
-                            <a href="">The consequenses of playing games</a>
-                        </li>
-                        <li class="bm_li">
-                            <a href="">asdasdsad</a>
-                        </li>
-                        <li class="bm_li">
-                            <a href="">asdasdsad</a>
                         </li>
                     </ol>
                 </div>
                 <div>
-                    label
+                    <label for="bm_check" class="cursor" >
+                        <div class="m_sticks s_half_width" id="bookmarks">Created Helps <span class="material-symbols-outlined">
+                            expand_more
+                            </span>
+                        </div>
+                        <input type="checkbox" class="" id="bm_check" style="display: none;" (change)="onCreatedHelpsCheckBoxChange($event)">
+                    </label>
                     <div class="m_sticks s_half_width">My Help Calls
                         <span class="material-symbols-outlined">
                             expand_more
                             </span></div>
-                            <ol class="bm_box">
-                                <li class="bm_li">
-                                    <a href="">The consequenses of playing games</a>
+                            <ol class="bm_box" [hidden]="isHiddenCreated">
+                                <li class="bm_li" *ngFor="let post of createdHelps">
+                                    <a href="">{{post.postTitle}}</a>
                                 </li>
                                 <li class="bm_li">
                                     <a href="">The consequenses of playing games</a>
-                                </li>
-                                <li class="bm_li">
-                                    <a href="">The consequenses of playing games</a>
-                                </li>
-                                <li class="bm_li">
-                                    <a href="">asdasdsad</a>
-                                </li>
-                                <li class="bm_li">
-                                    <a href="">asdasdsad</a>
                                 </li>
                             </ol>
                 </div>

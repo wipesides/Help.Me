@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormGroup,FormControl,ReactiveFormsModule } from '@angular/forms';
 import { Post } from '../post';
 import { FirebaseService } from '../firebase.service';
+import { getAuth } from 'firebase/auth';
 @Component({
   selector: 'app-create-help',
   standalone: true,
@@ -21,13 +22,17 @@ export class CreateHelpComponent {
   })
   constructor(private service: FirebaseService){}
   async submitCreateHelpForm(){
+    const user = getAuth();
+    const nameSurname = user.currentUser!.displayName!;
     let newPost: Post | null = null;
     let attachments: any;
     if (this.createHelpForm.value.postTitle && this.createHelpForm.value.postBody){
+      const date = new Date();
+      const formattedDate = `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
       newPost = {
         id: "",
-        user: "",
-        date: "",
+        user: nameSurname,
+        date: formattedDate,
         postTitle: this.createHelpForm.value.postTitle,
         postBody: this.createHelpForm.value.postBody,
       }

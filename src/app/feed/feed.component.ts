@@ -13,13 +13,38 @@ import { FirebaseService } from '../firebase.service';
 })
 export class FeedComponent implements OnInit{
   posts : any[] = [];
+  userData: any;
+  bookmarks: any[] = [];
   service : FirebaseService = inject(FirebaseService);
-   async ngOnInit(){
+    async ngOnInit(){
       try {
-        this.posts = await this.service.getPosts();
+        this.posts = (await this.service.getPosts()).reverse();
+        this.userData = await this.service.getUserData();
+        this.bookmarks = await this.service.getUserBookmarks(this.userData);
       } catch (error) {
         console.error('Failed to fetch posts:',error)
       }
     }
     constructor(){}
+    isBookmarked(post: any): boolean{
+      return this.bookmarks.includes(post.id)
+    }
+    helpClicked(post: any){
+      this.service._helpPost(post);
+    }
+    questionsClicked(post: any){
+      // Implementation later
+    }
+    bookmarkClicked(post: any){
+      if (this.isBookmarked(post)){
+        this.service._unbookmarkPost(post);
+      }
+      else {
+        this.service._bookmarkPost(post);
+      }
+    }
+    optionsClicked(post: any){
+      // Implementation later
+    }
+
 }

@@ -41,7 +41,10 @@
         margin-right: 3px;
         font-size: xx-large;
     }
-    
+    .material-icons{
+        margin-right: 3px;
+        font-size: xx-large;
+    }
     
     @media only screen and (min-width: 1250px) {
         .main {

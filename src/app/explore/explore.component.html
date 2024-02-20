@@ -10,14 +10,45 @@
             <span class="material-symbols-outlined" id="filter">sort</span>
             <span class="material-symbols-outlined" id="filter">tune</span>
             <div class="input_box">
-                <div class="m_sticks s_n_width input_sec">
-                    <input type="text" class="explore_input">
+                <div class="m_sticks s_n_width input_sec" [formGroup]="searchForm">
+                    <input type="text" class="explore_input" placeholder="Search..." formControlName="search">
                     <span class="material-symbols-outlined" id="edit">search</span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="search_results">
-
+    <div class="feed-body">
+        <div class="post" *ngIf = "filteredPosts.length === 0; else listPosts">
+            <div class="post-head">
+                <div class="post-bar"> Now </div>
+                <div class="post-title"> No help calls have been found according to your criterias. </div>
+            </div>
+            <div class="post-body"> You can change your filters and try again. </div>
+        </div>
+        <ng-template #listPosts>
+        <div class = "post" *ngFor ="let post of filteredPosts">
+            <div class="post-head">
+                <div class="post-bar"> {{post['name']}} {{post['surname']}} - {{post['date']}}</div>
+                <div class="post-title"> {{post['postTitle']}}</div>
+            </div>
+            <div class="post-body">
+                <div class="post-text"> {{post['postBody']}} </div>
+                <div class="post-buttons"> 
+                    <span class="material-symbols-outlined">
+                        accessibility
+                    </span>
+                    <span class="material-symbols-outlined">
+                        contact_support
+                    </span>
+                    <span class="material-symbols-outlined">
+                        bookmark
+                    </span>
+                    <span class="material-symbols-outlined">
+                        page_info
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ng-template>
     </div>
 </div>

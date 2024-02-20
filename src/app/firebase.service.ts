@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut, user } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut, updateProfile, user } from '@angular/fire/auth';
 import { Firestore, collection, getDocs, doc, setDoc, query, where, updateDoc, arrayRemove, getDoc, deleteDoc, addDoc, disablePersistentCacheIndexAutoCreation} from '@angular/fire/firestore';
 import { Storage, deleteObject, getDownloadURL, ref, uploadBytesResumable } from '@angular/fire/storage';
 import { Functions } from '@angular/fire/functions';
@@ -16,7 +16,6 @@ export class FirebaseService {
   constructor(private auth: Auth, private db: Firestore, private storage: Storage, private cfn: Functions) {}
   // Signing in/up/out
   async _signIn(email: string, password: string){
-    const auth = getAuth();
     await signInWithEmailAndPassword(this.auth,email,password)
     .then((userCredential) => {
       console.log(userCredential);
@@ -35,6 +34,7 @@ export class FirebaseService {
     .then(async (userCredential) => {
       const user = userCredential.user;
       const uid = user.uid;
+      await updateProfile(user,{ displayName: `${newUser.name} ${newUser.surname}`});
       const userDoc = doc(this.db,"users",uid)
       await setDoc(userDoc, {
         id: uid,
@@ -133,7 +133,7 @@ export class FirebaseService {
   }
   // Post actions
   async _editPost(currentPost: Post){
-
+    // Implementation later.
   }
   async _bookmarkPost(post: Post){
     const postId = post.id;
@@ -155,7 +155,18 @@ export class FirebaseService {
       });
     }
   }
+  async _helpPost(post: Post){
+    const postId = post.id;
+    const uid = this.auth.currentUser?.uid;
+    if (uid){
+      const userDocRef = doc(this.db,"users",uid);
+      await updateDoc(userDocRef,{
+        helpedPosts: arrayUnion(postId)
+      })
+    }
+  }
   async _seeUpdates(currentPost: Post){
+
     const uid = currentPost.id
     const currentPostRef = doc(this.db,"posts",uid);
     const currentPostSnap = await getDoc(currentPostRef);
@@ -166,7 +177,7 @@ export class FirebaseService {
     }
   }
   async _addUpdate(currentPost: Post,update: string){
-
+    // Implementation later.
   }
   async _askQuestion(currentPost: Post,question: string){
     if (!currentPost.questions){
@@ -183,40 +194,64 @@ export class FirebaseService {
     // Implementation later.
   }
   // Profile actions
-  async getUserPosts(){
+  async getUserData(){
     const uid = this.auth.currentUser?.uid;
     if (uid){
       const userDocRef = doc(this.db,"users",uid);
       const userDocSnap = await getDoc(userDocRef);
       if (userDocSnap.exists()){
         const userData = userDocSnap.data();
-        const createdPostsIds = userData['createdPosts'];
-        return createdPostsIds;
+        return userData;
       }
     }
+    return null;
   }
-  async getUserHelps(){
-    const uid = this.auth.currentUser?.uid;
-    if (uid){
-      const userDocRef = doc(this.db,"users",uid);
-      const userDocSnap = await getDoc(userDocRef);
-      if (userDocSnap.exists()){
-        const userData = userDocSnap.data();
-        const helpedPostsIds = userData['helpedPosts'];
-        return helpedPostsIds;
+  async getUserPosts(userData: any){
+      const createdPostsIds = userData['createdPosts'];
+      if (createdPostsIds.empty()){
+        return [{postTitle: "You have not created a help"}]
       }
-    }
+      const createdPosts = [];
+      const postsCollection = collection(this.db,'posts');
+      for (const createdPostId of createdPostsIds){
+        const postDoc = doc(postsCollection,createdPostId);
+        const postSnapshot = await getDoc(postDoc);
+        if (postSnapshot.exists()){
+          createdPosts.push(postSnapshot.data());
+        }
+      }
+      return createdPosts;
   }
-  async getUserBookmarks(){
-    const uid = this.auth.currentUser?.uid;
-    if (uid){
-      const userDocRef = doc(this.db,"users",uid);
-      const userDocSnap = await getDoc(userDocRef);
-      if (userDocSnap.exists()){
-        const userData = userDocSnap.data();
-        const bookmarkedPostsIds = userData['bookmarkedPosts'];
-        return bookmarkedPostsIds;
+  async getUserHelps(userData: any){
+    const donePostsIds = userData['helpedPosts'];
+    if (donePostsIds.empty()){
+      return [{postTitle: "You have not helped anyone yet."}]
+    }
+    const donePosts = [];
+    const postsCollection = collection(this.db,'posts');
+    for (const donePostId of donePostsIds){
+      const postDoc = doc(postsCollection,donePostId);
+      const postSnapshot = await getDoc(postDoc);
+      if (postSnapshot.exists()){
+        donePosts.push(postSnapshot.data());
       }
     }
+    return donePosts;
+  }
+  async getUserBookmarks(userData: any){
+      const bookmarkedPostsIds = userData['bookmarkedPosts'];
+      if (bookmarkedPostsIds.empty()){
+        return [{postTitle: "You have not bookmarked a help"}]
+      }
+      const bookmarkedPosts = [];
+      const postsCollection = collection(this.db,'posts');
+      for (const bookmarkedPostId of bookmarkedPostsIds){
+        const postDoc = doc(postsCollection,bookmarkedPostId);
+        const postSnapshot = await getDoc(postDoc);
+        if (postSnapshot.exists()){
+          bookmarkedPosts.push(postSnapshot.data());
+        }
+      }
+      return bookmarkedPosts;
   }
 }

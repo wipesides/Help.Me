@@ -6,25 +6,21 @@
         </div>
         <div class="profile-attributes">
             <div class="label_name">Name</div>
-            <div class="m_sticks s_n_width">ata sesli
+            <div class="m_sticks s_n_width">{{userData['name']}}
             </div>
             <div class="label_name">Email</div>
-            <div class="m_sticks s_n_width">atasesli&#64;gmail.com
+            <div class="m_sticks s_n_width">{{userData['surname']}}
             </div>
             <div class="label_name">Phone Number</div>
-            <div class="m_sticks s_n_width change">12412413123
+            <div class="m_sticks s_n_width change">{{userData['phoneNumber']}}
                 <span class="material-symbols-outlined" id="edit">edit</span>
             </div>
-            <div class="label_name">Address</div>
-            <div class="m_sticks s_n_width change">adasdasdsadas
-                <span class="material-symbols-outlined" id="edit">edit</span>
-            </div>
-            <div class="label_name">Password</div>
-            <div class="m_sticks s_n_width change">asdadasds
+            <div class="label_name">Change Password</div>
+            <div class="m_sticks s_n_width change">Change Password
                 <span class="material-symbols-outlined" id="edit">edit</span>
             </div>
             <div class="label_name">Account Type</div>
-            <div class="m_sticks s_n_width change">Vip
+            <div class="m_sticks s_n_width change">User
                 <span class="material-symbols-outlined" id="edit">cached</span>
             </div>
                 <button (click)="signOutButtonClicked()" class="material-symbols-outlined" style="

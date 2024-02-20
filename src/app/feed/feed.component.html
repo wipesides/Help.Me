@@ -16,16 +16,15 @@
             <div class="post-body">
                 <div class="post-text"> {{post['postBody']}} </div>
                 <div class="post-buttons"> 
-                    <span class="material-symbols-outlined">
+                    <span class="material-symbols-outlined" (click)="helpClicked(post)">
                         accessibility
                     </span>
-                    <span class="material-symbols-outlined">
+                    <span class="material-symbols-outlined" (click)="questionsClicked(post)">
                         contact_support
                     </span>
-                    <span class="material-symbols-outlined">
-                        bookmark
+                    <span class="material-icons" (click)="bookmarkClicked(post)" [innerText]="isBookmarked(post) ? 'bookmark' : 'bookmark_border'">
                     </span>
-                    <span class="material-symbols-outlined">
+                    <span class="material-symbols-outlined" (click)="optionsClicked(post)">
                         page_info
                     </span>
                 </div>

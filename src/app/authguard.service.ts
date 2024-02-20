@@ -8,7 +8,7 @@ import { FirebaseService } from './firebase.service';
 })
 export class AuthguardService {
   constructor(private router: Router){}
-  canActivate(){
+  canActivate() : boolean{
     const auth = getAuth();
     if (auth.currentUser){
       return true;
