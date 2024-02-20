@@ -207,8 +207,9 @@ export class FirebaseService {
     return null;
   }
   async getUserPosts(userData: any){
+
       const createdPostsIds = userData['createdPosts'];
-      if (createdPostsIds.empty()){
+      if (createdPostsIds.length === 0){
         return [{postTitle: "You have not created a help"}]
       }
       const createdPosts = [];
@@ -224,7 +225,7 @@ export class FirebaseService {
   }
   async getUserHelps(userData: any){
     const donePostsIds = userData['helpedPosts'];
-    if (donePostsIds.empty()){
+    if (donePostsIds.length === 0){
       return [{postTitle: "You have not helped anyone yet."}]
     }
     const donePosts = [];
@@ -240,7 +241,7 @@ export class FirebaseService {
   }
   async getUserBookmarks(userData: any){
       const bookmarkedPostsIds = userData['bookmarkedPosts'];
-      if (bookmarkedPostsIds.empty()){
+      if (bookmarkedPostsIds.length === 0){
         return [{postTitle: "You have not bookmarked a help"}]
       }
       const bookmarkedPosts = [];

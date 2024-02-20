@@ -1,6 +1,7 @@
 import { Component,inject,OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirebaseService } from '../firebase.service';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-feed',
   standalone: true,
@@ -25,9 +26,9 @@ export class FeedComponent implements OnInit{
         console.error('Failed to fetch posts:',error)
       }
     }
-    constructor(){}
+    constructor(private cdr: ChangeDetectorRef){}
     isBookmarked(post: any): boolean{
-      return this.bookmarks.includes(post.id)
+      return this.bookmarks.some(bookmark => bookmark.id === post.id);
     }
     helpClicked(post: any){
       this.service._helpPost(post);
@@ -46,5 +47,4 @@ export class FeedComponent implements OnInit{
     optionsClicked(post: any){
       // Implementation later
     }
-
 }

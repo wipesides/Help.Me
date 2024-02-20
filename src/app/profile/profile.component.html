@@ -43,9 +43,9 @@
                             expand_more
                             </span>
                         </div>
-                        <input type="checkbox" class="" id="dh_check" style="display: none;" (change)="onDoneHelpsCheckBoxChange($event)">
+                        <input type="checkbox" class="" id="dh_check" style="display: none;" (change)="onDoneHelpsCheckBoxChange($event)" value="0">
                     </label>
-                    <ol class="bm_box" [hidden]="isHiddenDone" >
+                    <ol class="bm_box" [hidden]="isHiddenDone">
                         <li class="bm_li" *ngFor="let post of doneHelps">
                             <a href="">{{post.postTitle}}</a>
                         </li>

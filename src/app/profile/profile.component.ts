@@ -30,16 +30,25 @@ export class ProfileComponent implements OnInit{
     if (target.checked){
       this.isHiddenBookmark = !target.checked;
     }
+    else {
+      this.isHiddenBookmark = !target.checked;
+    }
   }
   onCreatedHelpsCheckBoxChange(event: Event){
     const target = event.target as HTMLInputElement;
     if (target.checked){
       this.isHiddenCreated = !target.checked;
     }
+    else {
+      this.isHiddenCreated = !target.checked;
+    }
   }
   onDoneHelpsCheckBoxChange(event: Event){
     const target = event.target as HTMLInputElement;
     if (target.checked){
+      this.isHiddenDone = !target.checked;
+    }
+    else {
       this.isHiddenDone = !target.checked;
     }
   }

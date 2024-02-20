@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { NewsComponent } from './news/news.component';
 import { FeedComponent } from './feed/feed.component';
@@ -11,6 +11,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { CommunityComponent } from './community/community.component';
 import { CommonModule } from '@angular/common';
 import { OptionsComponent } from './options/options.component';
+import { getAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -34,6 +35,11 @@ import { OptionsComponent } from './options/options.component';
   styleUrl: './../styles.css',
   // encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  spinner: boolean = true;
   title = 'help-me';
+  async ngOnInit(){
+    const auth = getAuth()
+  }
+  constructor(){}
 }
