@@ -12,6 +12,8 @@ import { CommunityComponent } from './community/community.component';
 import { CommonModule } from '@angular/common';
 import { OptionsComponent } from './options/options.component';
 import { getAuth } from '@angular/fire/auth';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { FirebaseService } from './firebase.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -29,17 +31,13 @@ import { getAuth } from '@angular/fire/auth';
     AboutUsComponent,
     CommunityComponent,
     CommonModule,
-    OptionsComponent
+    OptionsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './../styles.css',
   // encapsulation: ViewEncapsulation.None,
 })
-export class AppComponent implements OnInit{
-  spinner: boolean = true;
+export class AppComponent {
   title = 'help-me';
-  async ngOnInit(){
-    const auth = getAuth()
-  }
   constructor(){}
 }

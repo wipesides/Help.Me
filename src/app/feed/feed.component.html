@@ -29,7 +29,7 @@
                     <span class="material-symbols-outlined" (click)="questionsClicked(post)">
                         contact_support
                     </span>
-                    <span class="material-icons" (click)="bookmarkClicked(post)" [innerText]="isBookmarked(post) ? 'bookmark' : 'bookmark_border'">
+                    <span class="material-icons" (click)="bookmarkClicked(post,$event)" [innerText]="isBookmarked(post) ? 'bookmark' : 'bookmark_border'">
                     </span>
                 </div>
             </div>
