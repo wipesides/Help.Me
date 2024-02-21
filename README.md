@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+How to run the website locally?
+
+Download the project or clone it using git via terminal.
+After that, run npm i to install the dependencies.
+Also, run this command:
+npm install @angular/cli
+Next, run this command on terminal:
+ng serve
+And now the website runs locally! You can try it now!
