@@ -20,10 +20,10 @@ export class ProfileComponent implements OnInit{
   doneHelps: any[] = [];
   constructor(private service: FirebaseService){}
   async ngOnInit(){
-    this.userData = await this.service.getUserData()
-    this.bookmarkedHelps = await this.service.getUserBookmarks(this.userData);
+    this.userData = await this.service.getUserData();
     this.createdHelps = await this.service.getUserPosts(this.userData);
     this.doneHelps = await this.service.getUserHelps(this.userData);
+    this.bookmarkedHelps = await this.service.getUserBookmarks(this.userData);
   }
   onBookmarkCheckBoxChange(event: Event){
     const target = event.target as HTMLInputElement;

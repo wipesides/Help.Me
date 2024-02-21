@@ -16,6 +16,7 @@ export class FirebaseService {
   constructor(private auth: Auth, private db: Firestore, private storage: Storage, private cfn: Functions) {}
   // Signing in/up/out
   async _signIn(email: string, password: string){
+    const auth = getAuth()
     await signInWithEmailAndPassword(this.auth,email,password)
     .then((userCredential) => {
       console.log(userCredential);

@@ -4,6 +4,7 @@ import { FormGroup,FormControl,ReactiveFormsModule } from '@angular/forms';
 import { Post } from '../post';
 import { FirebaseService } from '../firebase.service';
 import { getAuth } from 'firebase/auth';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-help',
   standalone: true,
@@ -15,12 +16,13 @@ import { getAuth } from 'firebase/auth';
   styleUrl: './create-help.component.css'
 })
 export class CreateHelpComponent {
+  loadedFileName= 'No files have been uploaded';
   createHelpForm = new FormGroup({
     postTitle: new FormControl(""),
     postBody: new FormControl(""),
     attachments: new FormControl(""),
   })
-  constructor(private service: FirebaseService){}
+  constructor(private service: FirebaseService, private router: Router){}
   async submitCreateHelpForm() {
     const user = getAuth();
     const nameSurname = user.currentUser!.displayName!;
@@ -52,5 +54,12 @@ export class CreateHelpComponent {
     else {
       console.error("Post cannot be sent!");
     }
+    this.router.navigate(['/home']);
+    }
+    onFileUpload(event: Event){
+      const target = event.target as HTMLInputElement;
+      if (target.files && target.files.length > 0){
+        this.loadedFileName = target.files[0].name;
+      }
     }
   }

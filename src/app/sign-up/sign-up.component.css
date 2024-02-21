@@ -1,5 +1,5 @@
 .feed {
-    width: 100%;
+    width: 850px;
     display: flex;
     flex-wrap: wrap;
     order: 2;
@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 12px;
+    margin-left: 18%;
 }
 .sections_header {
     width: 100%;

@@ -14,7 +14,7 @@
           </div>
             <label for="fileUpload">
                 <span class="material-symbols-outlined relative" id="create">
-                    <input class="absolute" type="file" id="fileUpload" multiple="multiple" formControlName="attachments">
+                    <input class="absolute" type="file" id="fileUpload" multiple="multiple" formControlName="attachments" (change)="onFileUpload($event)">
                     attach_file
                 </span>
             </label>
@@ -44,7 +44,7 @@
           style="resize: none"
         >
       </textarea>
-      <div class="img_counter">Attached File<span>/1</span></div>
+      <div class="img_counter">{{loadedFileName}}<span></span></div>
       </form>
   </div>
 </div>

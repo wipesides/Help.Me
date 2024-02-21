@@ -30,7 +30,7 @@ export class SignUpComponent {
         surname: this.signUpForm.value.surname,
         email: this.signUpForm.value.email,
         phoneNumber: this.signUpForm.value.phoneNumber,
-        password: this.signUpForm.value.phoneNumber,
+        password: this.signUpForm.value.password,
       }
       this.service._signUp(user);
     }
